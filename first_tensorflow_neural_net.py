@@ -29,7 +29,7 @@ train_step = optimizer.minimize(cross_entropy)
 sess = tf.Session()
 sess.run(init)
 
-for i in range(10000):
+for i in range(5000):
 	# load batch of images and correct answers
 	batch_X, batch_Y = mnist.train.next_batch(100)
 	train_data={X:batch_X , Y_: batch_Y}
@@ -43,3 +43,5 @@ for i in range(10000):
 	# success on test data ?
 	test_data={X:mnist.test.images, Y_:mnist.test.labels}
 	a,c = sess.run([accuracy, cross_entropy], feed_dict=test_data)
+	print (a)
+	print (c)
